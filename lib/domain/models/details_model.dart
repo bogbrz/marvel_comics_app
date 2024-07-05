@@ -1,8 +1,6 @@
 
-import 'package:flutter/cupertino.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:mood_up_recruitment_task/domain/models/data_model.dart';
-import 'package:mood_up_recruitment_task/enums.dart';
 
 part 'details_model.freezed.dart';
 @freezed

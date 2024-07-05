@@ -1,6 +1,8 @@
+import 'package:injectable/injectable.dart';
+import 'package:mood_up_recruitment_task/domain/data_sources/data_source.dart';
 import 'package:mood_up_recruitment_task/domain/models/data_model.dart';
-import 'package:mood_up_recruitment_task/data_source.dart';
 
+@injectable
 class DataRepository {
   DataRepository({required this.remoteDataSource});
   final RemoteDataSource remoteDataSource;

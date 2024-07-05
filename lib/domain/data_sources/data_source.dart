@@ -1,10 +1,11 @@
 import 'dart:convert';
 
 import 'package:dio/dio.dart';
+import 'package:injectable/injectable.dart';
 import 'package:mood_up_recruitment_task/app/env.dart';
 import 'package:mood_up_recruitment_task/domain/models/data_model.dart';
 import 'package:crypto/crypto.dart';
-
+@injectable
 class RemoteDataSource {
   static final privateKey = Env.privateKey;
   static final publicKey = Env.publicKey;
@@ -23,9 +24,9 @@ class RemoteDataSource {
 
     final String md5Hash = generateMd5(concatenatedString);
 
-    print(md5Hash);
+ 
 
-    // final String limit = 20.toString();
+  
 
     final String url =
         "https://gateway.marvel.com:443/v1/public/comics?format=comic&formatType=comic&noVariants=true&offset=$skip&apikey=$publicKey&ts=$ts&hash=$md5Hash";
@@ -45,9 +46,6 @@ class RemoteDataSource {
       throw Error();
     }
 
-    // print(initialData.code);
-    // if (initialData.code != "200") {
-    //   print("ERROR");
-    // }
+   
   }
 }

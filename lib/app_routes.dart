@@ -1,17 +1,14 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:mood_up_recruitment_task/domain/models/data_model.dart';
-import 'package:mood_up_recruitment_task/data_source.dart';
+import 'package:mood_up_recruitment_task/app/injection_conatiner.dart';
 import 'package:mood_up_recruitment_task/domain/models/details_model.dart';
-import 'package:mood_up_recruitment_task/domain/repositories/data_repository.dart';
 import 'package:mood_up_recruitment_task/features/pages/detalis_page/detalis_page.dart';
 import 'package:mood_up_recruitment_task/features/pages/home_page/cubit/home_page_cubit.dart';
 import 'package:mood_up_recruitment_task/features/pages/home_page/home_page.dart';
 import 'package:mood_up_recruitment_task/features/pages/search_page/cubit/search_page_cubit.dart';
-import 'package:mood_up_recruitment_task/main.dart';
-import 'package:mood_up_recruitment_task/root_page.dart';
 import 'package:mood_up_recruitment_task/features/pages/search_page/search_page.dart';
+import 'package:mood_up_recruitment_task/root_page.dart';
 
 final GlobalKey<NavigatorState> _rootNavigatorKey =
     GlobalKey<NavigatorState>(debugLabel: 'root');
@@ -42,10 +39,8 @@ class AppRouter {
                   path: '/homePage',
                   builder: (BuildContext context, GoRouterState state) {
                     return BlocProvider(
-                      create: (context) => HomePageCubit(
-                          dataRepository: DataRepository(
-                              remoteDataSource: RemoteDataSource()))
-                        ..start(skip: 0),
+                      create: (context) =>
+                          getIt<HomePageCubit>()..start(skip: 0),
                       child: HomePage(),
                     );
                   }),
@@ -58,9 +53,7 @@ class AppRouter {
                 path: '/searchPage',
                 builder: (BuildContext context, GoRouterState state) =>
                     BlocProvider(
-                  create: (context) => SearchPageCubit(
-                      dataRepository:
-                          DataRepository(remoteDataSource: RemoteDataSource())),
+                  create: (context) => getIt<SearchPageCubit>(),
                   child: SearchPage(),
                 ),
               ),
