@@ -1,7 +1,7 @@
-import 'package:flutter/cupertino.dart';
+import 'package:cached_network_image/cached_network_image.dart';
+
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:mood_up_recruitment_task/domain/models/data_model.dart';
+
 import 'package:mood_up_recruitment_task/device_size.dart';
 import 'package:mood_up_recruitment_task/domain/models/details_model.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
@@ -13,7 +13,7 @@ class DetailsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final websiteUri = Uri.parse(detailsModel.url[0].url!);
+    final websiteUri = Uri.parse(detailsModel.url[0].url);
     double height = DeviceSize(context).height;
     double width = DeviceSize(context).width;
     return Scaffold(
@@ -23,14 +23,21 @@ class DetailsPage extends StatelessWidget {
       body: Stack(
         children: [
           detailsModel.imageUrl == "non"
-              ? Image(image: AssetImage("assets/PlaceholderCover.png"))
-              : Image.network(
-                  detailsModel.imageUrl,
+              ? Center(
+                  child: Image(
+                  image: AssetImage(
+                    "assets/PlaceholderCover.png",
+                  ),
+                  width: width,
+                  height: height,
                   fit: BoxFit.fill,
-                  loadingBuilder: (context, child, loadingProgress) {
-                    if (loadingProgress == null) return child;
-
-                    return Center(child: CircularProgressIndicator());
+                ))
+              : CachedNetworkImage(
+                  imageUrl: detailsModel.imageUrl,
+                  placeholder: (context, url) {
+                    return Center(
+                      child: CircularProgressIndicator(),
+                    );
                   },
                 ),
           Positioned(
@@ -68,14 +75,34 @@ class DetailsPage extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(
-                width: double.infinity,
-                child: TextButton(
-                    style: TextButton.styleFrom(),
-                    onPressed: () {
-                      launchUrl(websiteUri, mode: LaunchMode.inAppBrowserView);
-                    },
-                    child: Text("Find out more")),
+              Material(
+                child: InkWell(
+                  onTap: () {
+                    launchUrl(websiteUri, mode: LaunchMode.inAppBrowserView);
+                  },
+                  child: Container(
+                    margin: EdgeInsets.all(width * 0.005),
+                    padding: EdgeInsets.all(width * 0.01),
+                    decoration: BoxDecoration(
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.5),
+                          spreadRadius: 5,
+                          blurRadius: 7,
+                          offset: Offset(0, 3),
+                        ),
+                      ],
+                      borderRadius: BorderRadius.circular(width * 0.02),
+                      color: Colors.red,
+                    ),
+                    width: double.infinity,
+                    child: Center(
+                        child: Text(
+                      "Find out more",
+                      style: Theme.of(context).textTheme.titleSmall,
+                    )),
+                  ),
+                ),
               ),
             ],
           ))
