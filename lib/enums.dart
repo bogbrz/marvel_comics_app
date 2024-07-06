@@ -1,3 +1,3 @@
-enum Status { initial, loading, succes, error, loadingMore }
+enum Status { initial, loading, succes, error,  }
 
-enum SearchStatus { initial, loading, empty , success, error, emptyTitle, }
+enum SearchStatus { initial, loading, empty , success, error,  }

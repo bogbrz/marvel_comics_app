@@ -4,7 +4,7 @@ import 'package:mood_up_recruitment_task/app_routes.dart';
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
@@ -17,10 +17,11 @@ class MyApp extends StatelessWidget {
             headlineMedium:
                 TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             headlineSmall: TextStyle(
+                fontSize: 15, color: Colors.grey, fontWeight: FontWeight.bold),
+            bodyLarge: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
+            bodyMedium: TextStyle(
               fontSize: 15,
             ),
-            bodyLarge: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
-            bodyMedium: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             bodySmall: TextStyle(
               fontSize: 15,
             ),
