@@ -11,7 +11,7 @@ import 'package:mood_up_recruitment_task/domain/models/details_model.dart';
 import 'package:mood_up_recruitment_task/domain/repositories/data_repository.dart';
 import 'package:mood_up_recruitment_task/enums.dart';
 import 'package:mood_up_recruitment_task/features/pages/home_page/cubit/home_page_cubit.dart';
-import 'package:skeletonizer/skeletonizer.dart';
+
 
 class HomePage extends StatelessWidget {
   HomePage({
