@@ -7,7 +7,7 @@ import 'package:mood_up_recruitment_task/domain/models/data_model.dart';
 import 'package:mood_up_recruitment_task/device_size.dart';
 import 'package:mood_up_recruitment_task/domain/models/details_model.dart';
 import 'package:mood_up_recruitment_task/enums.dart';
-import 'package:mood_up_recruitment_task/features/pages/comic_widget.dart';
+import 'package:mood_up_recruitment_task/features/pages/comic_tile_wiget/comic_widget.dart';
 import 'package:mood_up_recruitment_task/features/pages/home_page/cubit/home_page_cubit.dart';
 
 class HomePage extends StatelessWidget {

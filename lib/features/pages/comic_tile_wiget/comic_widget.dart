@@ -2,7 +2,6 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:mood_up_recruitment_task/domain/models/data_model.dart';
 
-
 class ComicWidget extends StatelessWidget {
   const ComicWidget({
     super.key,
@@ -75,7 +74,7 @@ class ComicWidget extends StatelessWidget {
                 children: [
                   Text(
                     "${comic!.title}",
-                    style: Theme.of(context).textTheme.headlineMedium,
+                    style: Theme.of(context).textTheme.headlineSmall,
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                   ),
@@ -84,7 +83,7 @@ class ComicWidget extends StatelessWidget {
                     comic!.creators.items.isNotEmpty
                         ? "Written by ${comic!.creators.items[0].name}"
                         : "No creator data available",
-                    style: Theme.of(context).textTheme.headlineSmall,
+                    style: Theme.of(context).textTheme.titleLarge,
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                   ),
@@ -94,7 +93,7 @@ class ComicWidget extends StatelessWidget {
                       comic!.textObjects.isEmpty
                           ? comic!.description ?? "No data available"
                           : comic!.textObjects[0].text,
-                      style: Theme.of(context).textTheme.bodyMedium,
+                      style: Theme.of(context).textTheme.bodySmall,
                       maxLines: 5,
                       softWrap: true,
                       overflow: TextOverflow.ellipsis,

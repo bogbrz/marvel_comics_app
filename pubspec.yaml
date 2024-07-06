@@ -47,20 +47,10 @@ dependencies:
   url_launcher: ^6.3.0
 
   envied: ^0.5.4+1
-<<<<<<< HEAD
-  flutter_launcher_icons: ^0.13.1
+ 
   cached_network_image: ^3.3.1
-=======
-  
-  cached_network_image: ^3.3.1
-  
-  get_it: ^7.7.0
   injectable: ^2.4.2
-  injectable_generator: ^2.6.1
-  flutter_native_splash: ^2.4.0
-flutter_native_splash:
-  background_image: "assets/SplashScreen.png"
->>>>>>> 38874f28c820c47f2de9c05f220e687d2f639e0d
+  google_fonts: ^6.2.1
 
 dev_dependencies:
   flutter_test:

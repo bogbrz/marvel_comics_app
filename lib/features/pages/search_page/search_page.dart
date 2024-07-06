@@ -6,7 +6,7 @@ import 'package:mood_up_recruitment_task/domain/models/data_model.dart';
 import 'package:mood_up_recruitment_task/device_size.dart';
 import 'package:mood_up_recruitment_task/domain/models/details_model.dart';
 import 'package:mood_up_recruitment_task/enums.dart';
-import 'package:mood_up_recruitment_task/features/pages/comic_widget.dart';
+import 'package:mood_up_recruitment_task/features/pages/comic_tile_wiget/comic_widget.dart';
 import 'package:mood_up_recruitment_task/features/pages/search_page/cubit/search_page_cubit.dart';
 
 class SearchPage extends StatelessWidget {
@@ -57,43 +57,24 @@ class SearchPage extends StatelessWidget {
                           controller.text = "";
                           skip = 0;
                         },
-                        child: Text("cancel")),
+                        child: Text(
+                          "cancel",
+                          style: Theme.of(context).textTheme.bodyMedium,
+                        )),
                   ]),
             ),
             BlocBuilder<SearchPageCubit, SearchPageState>(
               builder: (context, state) {
                 switch (state.searchStatus) {
                   case SearchStatus.initial:
-                    return Center(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(Icons.menu_book),
-                          Text("Start typing to find a particular comics.")
-                        ],
-                      ),
-                    );
+                    return InitialSearchPage(height: height);
                   case SearchStatus.error:
                     print(state.errorMessage);
-                    return Center(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(state.errorMessage ?? ""),
-                        ],
-                      ),
+                    return ErrorSearchPage(
+                      errorMessage: state.errorMessage,
                     );
                   case SearchStatus.empty:
-                    return Center(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(Icons.search_off),
-                          Text(
-                              "There is no comic book with that name in our library. Check the spelling and try again."),
-                        ],
-                      ),
-                    );
+                    return EmpySearchPage(height: height);
                   case SearchStatus.loading:
                     return Center(child: CircularProgressIndicator());
                   case SearchStatus.success:
@@ -148,6 +129,85 @@ class SearchPage extends StatelessWidget {
             )
           ],
         ),
+      ),
+    );
+  }
+}
+
+class EmpySearchPage extends StatelessWidget {
+  const EmpySearchPage({
+    super.key,
+    required this.height,
+  });
+
+  final double height;
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Icon(
+            Icons.search_off,
+            size: height * 0.25,
+            color: Colors.grey,
+          ),
+          Text(
+            textAlign: TextAlign.center,
+            "There is no comic book with that name in our library. Check the spelling and try again.",
+            style: Theme.of(context).textTheme.titleSmall,
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class ErrorSearchPage extends StatelessWidget {
+  const ErrorSearchPage({
+    super.key,
+    required this.errorMessage,
+  });
+  final String? errorMessage;
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(errorMessage ?? ""),
+        ],
+      ),
+    );
+  }
+}
+
+class InitialSearchPage extends StatelessWidget {
+  const InitialSearchPage({
+    super.key,
+    required this.height,
+  });
+
+  final double height;
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Icon(
+            Icons.menu_book,
+            size: height * 0.25,
+            color: Colors.grey,
+          ),
+          Text(
+            textAlign: TextAlign.center,
+            "Start typing to find a particular comics.",
+            style: Theme.of(context).textTheme.titleSmall,
+          )
+        ],
       ),
     );
   }
