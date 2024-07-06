@@ -9,10 +9,6 @@ import 'package:mood_up_recruitment_task/domain/models/details_model.dart';
 import 'package:mood_up_recruitment_task/enums.dart';
 import 'package:mood_up_recruitment_task/features/pages/comic_widget.dart';
 import 'package:mood_up_recruitment_task/features/pages/home_page/cubit/home_page_cubit.dart';
-<<<<<<< HEAD
-
-=======
->>>>>>> 38874f28c820c47f2de9c05f220e687d2f639e0d
 
 class HomePage extends StatelessWidget {
   HomePage({
