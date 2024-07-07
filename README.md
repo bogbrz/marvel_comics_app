@@ -1,5 +1,9 @@
 # marvel_comics_app
-This app uses marvel comic app to get data.
+This app uses MARVEL comic API to get comic data and display it in an approachable way as a scrollable list.
+Features: 
+- pagination,
+- redirecting to the website,
+- caching images.
 Packages used in this project:
 
 ![dependecies](https://github.com/bogbrz/marvel_comics_app/assets/142913714/0ee63d21-af52-45dd-bd54-d44625860f14)
