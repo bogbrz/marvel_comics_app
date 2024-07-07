@@ -3,7 +3,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:mood_up_recruitment_task/domain/models/data_model.dart';
 import 'package:mood_up_recruitment_task/domain/repositories/data_repository.dart';
-import 'package:mood_up_recruitment_task/enums.dart';
+import 'package:mood_up_recruitment_task/app/core/enums.dart';
 
 part 'search_page_cubit.freezed.dart';
 part 'search_page_state.dart';

@@ -5,7 +5,7 @@ import 'package:meta/meta.dart';
 
 import 'package:mood_up_recruitment_task/domain/models/data_model.dart';
 import 'package:mood_up_recruitment_task/domain/repositories/data_repository.dart';
-import 'package:mood_up_recruitment_task/enums.dart';
+import 'package:mood_up_recruitment_task/app/core/enums.dart';
 
 part 'home_page_state.dart';
 part 'home_page_cubit.freezed.dart';

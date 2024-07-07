@@ -3,7 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:mood_up_recruitment_task/domain/models/data_model.dart';
 import 'package:mood_up_recruitment_task/domain/repositories/data_repository.dart';
-import 'package:mood_up_recruitment_task/enums.dart';
+import 'package:mood_up_recruitment_task/app/core/enums.dart';
 import 'package:mood_up_recruitment_task/features/pages/home_page/cubit/home_page_cubit.dart';
 
 class MockDataRepository extends Mock implements DataRepository {}

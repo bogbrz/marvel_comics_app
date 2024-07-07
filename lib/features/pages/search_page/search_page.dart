@@ -3,9 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:go_router/go_router.dart';
 import 'package:mood_up_recruitment_task/domain/models/data_model.dart';
-import 'package:mood_up_recruitment_task/device_size.dart';
+import 'package:mood_up_recruitment_task/app/core/device_size.dart';
 import 'package:mood_up_recruitment_task/domain/models/details_model.dart';
-import 'package:mood_up_recruitment_task/enums.dart';
+import 'package:mood_up_recruitment_task/app/core/enums.dart';
 import 'package:mood_up_recruitment_task/features/pages/comic_tile_wiget/comic_widget.dart';
 import 'package:mood_up_recruitment_task/features/pages/search_page/cubit/search_page_cubit.dart';
 

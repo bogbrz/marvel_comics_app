@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:mood_up_recruitment_task/app_routes.dart';
+import 'package:mood_up_recruitment_task/app/app_routes/app_routes.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

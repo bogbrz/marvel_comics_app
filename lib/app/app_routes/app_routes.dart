@@ -1,14 +1,14 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:mood_up_recruitment_task/app/injection_conatiner.dart';
+import 'package:mood_up_recruitment_task/app/injectable/injection_conatiner.dart';
 import 'package:mood_up_recruitment_task/domain/models/details_model.dart';
 import 'package:mood_up_recruitment_task/features/pages/detalis_page/detalis_page.dart';
 import 'package:mood_up_recruitment_task/features/pages/home_page/cubit/home_page_cubit.dart';
 import 'package:mood_up_recruitment_task/features/pages/home_page/home_page.dart';
+import 'package:mood_up_recruitment_task/features/pages/root_page/root_page.dart';
 import 'package:mood_up_recruitment_task/features/pages/search_page/cubit/search_page_cubit.dart';
 import 'package:mood_up_recruitment_task/features/pages/search_page/search_page.dart';
-import 'package:mood_up_recruitment_task/root_page.dart';
 
 final GlobalKey<NavigatorState> _rootNavigatorKey =
     GlobalKey<NavigatorState>(debugLabel: 'root');

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:go_router/go_router.dart';
-import 'package:mood_up_recruitment_task/device_size.dart';
+import 'package:mood_up_recruitment_task/app/core/device_size.dart';
 
 class RootPage extends StatefulWidget {
   const RootPage({Key? key, required this.navigationShell})

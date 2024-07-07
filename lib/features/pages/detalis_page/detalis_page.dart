@@ -4,7 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-import 'package:mood_up_recruitment_task/device_size.dart';
+import 'package:mood_up_recruitment_task/app/core/device_size.dart';
 import 'package:mood_up_recruitment_task/domain/models/details_model.dart';
 import 'package:mood_up_recruitment_task/features/pages/detalis_page/widgets/slide_up_panel.dart';
 

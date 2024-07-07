@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
-import 'package:mood_up_recruitment_task/app/env.dart';
+import 'package:mood_up_recruitment_task/app/env/env.dart';
 import 'package:mood_up_recruitment_task/domain/models/data_model.dart';
 import 'package:crypto/crypto.dart';
 @injectable
