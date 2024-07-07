@@ -4,6 +4,7 @@ Features:
 - pagination,
 - redirecting to the website,
 - caching images.
+  
 Packages used in this project:
 
 ![dependecies](https://github.com/bogbrz/marvel_comics_app/assets/142913714/0ee63d21-af52-45dd-bd54-d44625860f14)
