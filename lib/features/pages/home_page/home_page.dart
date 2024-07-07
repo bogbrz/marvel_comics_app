@@ -26,7 +26,7 @@ class HomePage extends StatelessWidget {
       if (scrollController.position.pixels ==
           scrollController.position.maxScrollExtent) {
         skip += 20;
-        print("SKIP : $skip");
+     
         context.read<HomePageCubit>().getMoreData(
               skip: skip,
             );
@@ -43,8 +43,8 @@ class HomePage extends StatelessWidget {
           BlocBuilder<HomePageCubit, HomePageState>(builder: (context, state) {
         results.addAll(state.results);
 
-        print("total ${state.data?.total}");
-        print(results);
+
+ 
         switch (state.status) {
           case Status.error:
             return Center(
@@ -58,7 +58,7 @@ class HomePage extends StatelessWidget {
 
           case Status.succes:
       
-            print("RESUTS HOME PAGE ${results.length}");
+        
             return ListView.builder(
               physics: AlwaysScrollableScrollPhysics(),
               controller: scrollController,

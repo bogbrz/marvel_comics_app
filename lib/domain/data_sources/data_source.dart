@@ -36,7 +36,7 @@ class RemoteDataSource {
     final result =
         await Dio().get<Map<String, dynamic>>(title == null ? url : titleUrl);
 
-    print(result);
+
     final responseData = result.data;
 
     final initialData = InitialData.fromJson(responseData!);

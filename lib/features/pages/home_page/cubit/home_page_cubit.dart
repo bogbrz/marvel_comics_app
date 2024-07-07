@@ -49,9 +49,9 @@ class HomePageCubit extends Cubit<HomePageState> {
         emit(
             HomePageState(status: Status.succes, results: results, data: data));
       }
-      print(data.results);
+   
     } catch (e) {
-      print("ERROR CUBIT");
+ 
 
       emit(HomePageState(
         status: Status.error,

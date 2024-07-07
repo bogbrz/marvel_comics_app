@@ -48,11 +48,11 @@ class SearchPageCubit extends Cubit<SearchPageState> {
     required int skip,
     String? title,
   }) async {
-    print("CUBIT $skip");
+
     if (title != null && title.isNotEmpty) {
       try {
         final data = await dataRepository.getComics(title: title, skip: skip);
-        print("RESULTS ${data.results}");
+    
         final results = data.results.where(
           (element) {
             return (element.creators.items.isNotEmpty &&
@@ -62,7 +62,7 @@ class SearchPageCubit extends Cubit<SearchPageState> {
           },
         ).toList();
 
-        print("TOTAL ${data.total}");
+    
         if (results.isNotEmpty) {
           emit(SearchPageState(
               searchStatus: SearchStatus.success,

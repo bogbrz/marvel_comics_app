@@ -18,7 +18,7 @@ class ComicWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print("WIDHT ${width * 0.367}");
+
     return Container(
       height: 225,
       decoration: BoxDecoration(

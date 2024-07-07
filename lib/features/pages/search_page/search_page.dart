@@ -69,7 +69,7 @@ class SearchPage extends StatelessWidget {
                   case SearchStatus.initial:
                     return InitialSearchPage(height: height);
                   case SearchStatus.error:
-                    print(state.errorMessage);
+                
                     return ErrorSearchPage(
                       errorMessage: state.errorMessage,
                     );
@@ -79,7 +79,7 @@ class SearchPage extends StatelessWidget {
                     return Center(child: CircularProgressIndicator());
                   case SearchStatus.success:
                     results.addAll(state.results);
-                    print(" RESULTS LENGHT ${results.length} ");
+                  
                     return Expanded(
                       child: ListView.builder(
                         controller: scrollController,
