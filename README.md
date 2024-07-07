@@ -1,5 +1,6 @@
 # marvel_comics_app
 This app uses MARVEL comic API to get comic data and display it in an approachable way as a scrollable list.
+
 Features: 
 - pagination,
 - redirecting to the website,
